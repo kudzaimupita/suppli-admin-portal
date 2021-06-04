@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+// import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import './assets/vendors/style';
+import './styles/wieldy.less';
+import './assets/vendor/nucleo/css/nucleo.css';
+import './assets/vendor/font-awesome/css/font-awesome.min.css';
+import './assets/scss/argon-dashboard-react.scss';
+import 'react-notification-alert/dist/animate.css';
+import './assets/scss/image-gallery.scss';
+import 'antd/dist/antd.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
+
   document.getElementById('root')
 );
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
