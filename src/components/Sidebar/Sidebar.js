@@ -7,6 +7,7 @@ import { logout } from '../../actions/auth';
 import NavUserDropdown from '../../components/NavUserDropdown';
 import { getCatergories } from '../../actions/catergories';
 import { loadMyPlug } from '../../actions/auth';
+import logoo from '../../assets/images/suppli2.jpg';
 // reactstrap components
 import {
   Collapse,
@@ -95,10 +96,10 @@ class Sidebar extends React.Component {
             <span className="navbar-toggler-icon" />
           </button>
 
-          <NavbarBrand className="pt-0">
+          <div className="pt-0 pr-40">
             {' '}
-            <img alt="..." src={require('../../assets/images/logo-1.png')} />
-          </NavbarBrand>
+            <img style={{ height: '80px' }} alt="..." src={logoo} />
+          </div>
 
           <Nav className="align-items-center d-md-none">
             <UncontrolledDropdown nav></UncontrolledDropdown>

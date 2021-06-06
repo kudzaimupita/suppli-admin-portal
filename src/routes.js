@@ -33,7 +33,7 @@ var routes = [
   },
   {
     path: '/plugs',
-    name: 'Shops',
+    name: 'Stores',
     icon: 'ni ni-shop text-red',
     component: Plugs,
     layout: '/admin',
@@ -76,13 +76,13 @@ var routes = [
     component: ProductReviews,
     layout: '/admin',
   },
-  {
-    path: '/shop-reviews',
-    name: 'Shop reviews',
-    icon: 'ni ni-chat-round text-success',
-    component: PlugReviews,
-    layout: '/admin',
-  },
+  // {
+  //   path: '/shop-reviews',
+  //   name: 'Shop reviews',
+  //   icon: 'ni ni-chat-round text-success',
+  //   component: PlugReviews,
+  //   layout: '/admin',
+  // },
 
   {
     path: '/maillist',

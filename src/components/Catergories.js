@@ -194,7 +194,7 @@ class OrderTable extends React.Component {
     <Avatar
       shape="square"
       size={24}
-      src={`http://localhost:5000/img/catergories/${row.imageCover}`}
+      src={`https://suppli-images.s3.af-south-1.amazonaws.com/${row.imageCover}`}
     />
   );
   activeFormatter = (cell, row) => (
@@ -327,7 +327,7 @@ class OrderTable extends React.Component {
 
             {
               dataField: 'plugs.length',
-              text: 'Shops',
+              text: 'Stores',
               sort: true,
             },
             {
@@ -532,7 +532,7 @@ class OrderTable extends React.Component {
                     ) : (
                       <img
                         //  src={}
-                        src={`http://localhost:5000/img/catergories/${
+                        src={`https://suppli-images.s3.af-south-1.amazonaws.com/${
                           this.state.catergory &&
                           this.state.catergory.imageCover
                         }`}
@@ -570,7 +570,7 @@ class OrderTable extends React.Component {
                     ) : (
                       <img
                         //  src={}
-                        src={`http://localhost:5000/img/catergories/${
+                        src={`https://suppli-images.s3.af-south-1.amazonaws.com/${
                           this.state.catergory &&
                           this.state.catergory.imageBanner
                         }`}

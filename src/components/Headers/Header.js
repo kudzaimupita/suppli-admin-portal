@@ -11,15 +11,27 @@ import {
   getDueAmount,
   getPlugDailyStats,
 } from '../../actions/plugs';
+import {
+  getAllOrders,
+  getStats,
+  getAggregatedStats,
+  getDailyStats,
+  getWeeklyStats,
+} from '../../actions/orders';
 // reactstrap components
 import { CardBody, CardTitle, Container, Row, Col } from 'reactstrap';
 import { Card } from 'antd';
 class Header extends React.Component {
   componentWillMount() {
-    this.props.getPlugStats();
+    // this.props.getPlugStats();
     this.props.getDueAmount();
-    this.props.getPlugDailyStats();
+    // this.props.getPlugDailyStats();
     this.props.getProductStats();
+    this.props.getAllOrders();
+    this.props.getStats();
+    // this.props.getAggregatedStats();
+    this.props.getDailyStats();
+    this.props.getWeeklyStats();
   }
   render() {
     console.log(
@@ -65,9 +77,9 @@ class Header extends React.Component {
                         className="text-secondary mr-2"
                         style={{ fontSize: '12px' }}
                       >
-                        {this.props.dailyStats &&
-                        this.props.dailyStats.newOrders
-                          ? this.props.dailyStats.newOrders.length
+                        {this.props.dailyStatss &&
+                        this.props.dailyStatss.newOrders
+                          ? this.props.dailyStatss.newOrders.length
                           : 0}
                         {'  '}orders
                       </span>
@@ -135,9 +147,9 @@ class Header extends React.Component {
                         className="text-info mr-2"
                         style={{ fontSize: '12px' }}
                       >
-                        {this.props.dailyStats &&
-                        this.props.dailyStats.newSubscribers
-                          ? this.props.dailyStats.newSubscribers.length
+                        {this.props.dailyStatss &&
+                        this.props.dailyStatss.newSubscribers
+                          ? this.props.dailyStatss.newSubscribers.length
                           : 0}{' '}
                         subs
                       </span>{' '}
@@ -215,12 +227,12 @@ class Header extends React.Component {
                         className="text-success mr-2"
                         style={{ fontSize: '10px' }}
                       >
-                        {this.props.dailyStats &&
-                        this.props.dailyStats.newGrossRevenue
+                        {this.props.dailyStatss &&
+                        this.props.dailyStatss.newGrossRevenue
                           ? new Intl.NumberFormat('de-ZA', {
                               style: 'currency',
                               currency: 'ZAR',
-                            }).format(this.props.dailyStats.newGrossRevenue)
+                            }).format(this.props.dailyStatss.newGrossRevenue)
                           : 0}
                       </span>{' '}
                       <span
@@ -300,12 +312,12 @@ class Header extends React.Component {
                         className="text-success mr-2"
                         style={{ fontSize: '10px' }}
                       >
-                        {this.props.dailyStats &&
-                        this.props.dailyStats.newNetRevenue
+                        {this.props.dailyStatss &&
+                        this.props.dailyStatss.newNetRevenue
                           ? new Intl.NumberFormat('de-ZA', {
                               style: 'currency',
                               currency: 'ZAR',
-                            }).format(this.props.dailyStats.newNetRevenue)
+                            }).format(this.props.dailyStatss.newNetRevenue)
                           : 0}
                         {/* {this.props.dailyStats &&
                               this.props.dailyStats.newNetRevenue}
@@ -377,8 +389,10 @@ class Header extends React.Component {
                         className="text-secondary mr-2"
                         style={{ fontSize: '12px' }}
                       >
-                        {this.props.dailyStats && this.props.dailyStats.newUsers
-                          ? this.props.dailyStats.newUsers.length
+                        {this.props.dailyStatss &&
+                        this.props.dailyStatss &&
+                        this.props.dailyStatss.newUsers
+                          ? this.props.dailyStatss.newUsers.length
                           : 0}{' '}
                         users
                       </span>
@@ -396,8 +410,9 @@ class Header extends React.Component {
                     >
                       <span className="text-secondary mr-0">
                         {this.props.weeklyStats &&
-                          this.props.weeklyStats.newUser &&
-                          this.props.weeklyStats.newUsers.length}
+                        this.props.weeklyStats.newUsers
+                          ? this.props.weeklyStats.newUsers.length
+                          : 0}
                         {'  '} users
                       </span>
 
@@ -450,9 +465,9 @@ class Header extends React.Component {
                         className="text-info mr-2"
                         style={{ fontSize: '12px' }}
                       >
-                        {this.props.dailyStats &&
-                        this.props.dailyStats.newProducts
-                          ? this.props.dailyStats.newProducts.length
+                        {this.props.dailyStatss &&
+                        this.props.dailyStatss.newProducts
+                          ? this.props.dailyStatss.newProducts.length
                           : 0}
                         {'  '} products
                       </span>{' '}
@@ -496,7 +511,7 @@ class Header extends React.Component {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          Shops
+                          Stores
                         </CardTitle>
                         <span
                           className="h5 font-weight-bold mb-0"
@@ -519,11 +534,12 @@ class Header extends React.Component {
                         className="text-success mr-2"
                         style={{ fontSize: '12px' }}
                       >
-                        {this.props.dailyStats && this.props.dailyStats.newPlugs
-                          ? this.props.dailyStats.newPlugs.length
+                        {this.props.dailyStatss &&
+                        this.props.dailyStatss.newPlugs
+                          ? this.props.dailyStatss.newPlugs.length
                           : 0}
                         {'  '}
-                        shops
+                        stores
                       </span>{' '}
                       <span
                         className="text-nowrap"
@@ -540,7 +556,7 @@ class Header extends React.Component {
                         {this.props.weeklyStats &&
                           this.props.weeklyStats.newPlugs &&
                           this.props.weeklyStats.newPlugs.length}
-                        {'  '} shops
+                        {'  '} stores
                       </span>
 
                       <span
@@ -597,9 +613,9 @@ class Header extends React.Component {
                         className="text-success mr-2"
                         style={{ fontSize: '10px' }}
                       >
-                        {this.props.dailyStats &&
-                        this.props.dailyStats.newRefunds
-                          ? this.props.dailyStats.newRefunds.length
+                        {this.props.dailyStatss &&
+                        this.props.dailyStatss.newRefunds
+                          ? this.props.dailyStatss.newRefunds.length
                           : 0}
                         {'  '} refunds
                       </span>
@@ -660,6 +676,7 @@ const mapStateToProps = (state) => ({
   stats: state.stats.stats,
   weeklyStats: state.weeklyStats.stats,
   amountDue: state.unBalancedSales.stats,
+  dailyStatss: state.dailyStats.stats,
 });
 
 export default connect(mapStateToProps, {
@@ -670,4 +687,9 @@ export default connect(mapStateToProps, {
   getDueAmount,
   getPlugDailyStats,
   getProductStats,
+  getAllOrders,
+  getStats,
+  getAggregatedStats,
+  getDailyStats,
+  getWeeklyStats,
 })(Header);

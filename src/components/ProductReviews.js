@@ -8,7 +8,7 @@ import ToolkitProvider, { Search } from 'react-bootstrap-table2-toolkit';
 import { connect } from 'react-redux';
 
 import { logout } from '../actions/auth';
-
+import { getAllProductReviews } from '../actions/productReviews';
 import { getProduct, deleteProduct, updateProduct } from '../actions/products';
 import { loadMyPlug } from '../actions/auth';
 
@@ -62,6 +62,9 @@ const pagination = paginationFactory({
 const { SearchBar } = Search;
 
 class OrderTable extends React.Component {
+  componentDidMount() {
+    this.props.getAllProductReviews();
+  }
   toggleModal = (state) => {
     this.setState({
       [state]: !this.state[state],
@@ -249,7 +252,7 @@ class OrderTable extends React.Component {
                             Search:{'  '}
                             <SearchBar
                               className="form-control-sm"
-                              placeholder="Search orders"
+                              placeholder="Search reviews"
                               {...props.searchProps}
                             />
                           </label>
@@ -350,4 +353,5 @@ export default connect(mapStateToProps, {
   updateProduct,
   deleteProduct,
   getDueAmount,
+  getAllProductReviews,
 })(OrderTable);

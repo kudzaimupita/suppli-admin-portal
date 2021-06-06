@@ -491,7 +491,7 @@ class OrderTable extends React.Component {
                               Search:{'  '}
                               <SearchBar
                                 className="form-control-sm"
-                                placeholder="Search orders"
+                                placeholder="Search stores"
                                 {...props.searchProps}
                               />
                             </label>

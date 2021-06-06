@@ -481,7 +481,7 @@ class OrderTable extends React.Component {
 
                       {
                         dataField: 'plugsBalanced',
-                        text: 'Shops paid?',
+                        text: 'Stores paid?',
                         isDummyField: true,
                         csvExport: false,
                         sort: true,
@@ -676,7 +676,7 @@ class OrderTable extends React.Component {
 
                       {
                         dataField: 'plugsBalanced',
-                        text: 'Shops paid?',
+                        text: 'Stores paid?',
                         isDummyField: true,
                         csvExport: false,
                         sort: true,
@@ -986,7 +986,7 @@ class OrderTable extends React.Component {
 
                       {
                         dataField: 'plugsBalanced',
-                        text: 'Shops paid?',
+                        text: 'Stores paid?',
                         isDummyField: true,
                         csvExport: false,
                         sort: true,
@@ -1342,7 +1342,7 @@ class OrderTable extends React.Component {
                                     Search:{'  '}
                                     <SearchBar
                                       className="form-control-sm"
-                                      placeholder="Search orders"
+                                      placeholder="Search stores"
                                       {...props.searchProps}
                                     />
                                   </label>
@@ -2251,7 +2251,7 @@ class OrderTable extends React.Component {
                 {this.props.order[0] && this.props.order[0].plugsBalancedOn && (
                   <tr>
                     <th scope="row">
-                      <i className="ni ni-calendar-grid-58 text-black" /> Shops
+                      <i className="ni ni-calendar-grid-58 text-black" /> Stores
                       paid On{' '}
                     </th>
                     <td>

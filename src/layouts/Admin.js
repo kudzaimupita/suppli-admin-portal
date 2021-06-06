@@ -59,7 +59,7 @@ class Admin extends React.Component {
             {...this.props}
             brandText={this.getBrandText(this.props.location.pathname)}
           />
-          <Switch>
+          <Switch style={{ marginBottom: '150px' }}>
             {this.getRoutes(routes)}
             <Redirect from="*" to="/admin/index" />
           </Switch>

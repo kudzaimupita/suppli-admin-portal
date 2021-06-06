@@ -12,7 +12,7 @@ class Tables extends React.Component {
         <GeneralHeader />
         <Container className="mt--7  bg-secondary" fluid>
           <Row>
-            <Col className="mb-5 mb-xl-0" xl="7">
+            <Col className="mb-5 mb-xl-0" xl="12">
               {' '}
               <Maillist />
             </Col>

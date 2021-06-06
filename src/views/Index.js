@@ -46,6 +46,7 @@ import Header from '../components/Headers/Header';
 class Index extends React.Component {
   componentDidMount() {
     this.props.getPlugWeeklyStats();
+    this.props.getAggregatedStats();
   }
   constructor(props) {
     super(props);
@@ -556,7 +557,7 @@ class Index extends React.Component {
                     <ListGroupItem className="d-flex bg-secondary justify-content-between align-items-center">
                       <h4 className="text-muted text-uppercase">
                         <i className="ni ni-shop"></i>
-                        {'  '}Top shops
+                        {'  '}Top stores
                       </h4>
                     </ListGroupItem>
                     {this.props.productsBySales.salesByPlug &&
@@ -581,7 +582,7 @@ class Index extends React.Component {
                       <h3 className="mb-0">Weekly stats</h3>
                     </div>
                     <div className="col text-right">
-                      <Link to="/admin/order-summary">
+                      <Link to="/admin/orders">
                         {' '}
                         <Button color="primary" href="/" size="sm">
                           See order summary
@@ -774,26 +775,33 @@ class Index extends React.Component {
             <Col xl="4">
               <Card className="card-stats mb-4 mb-xl-0">
                 {/* <Map /> */}
-                <div className="chart">
-                  <Pie
-                    options={this.city}
-                    data={this.chartExample1.data3}
-                    // options={chartExample2.options}
-                    className="chart-canvas"
-                    id="chart-pie"
-                  />
-                </div>{' '}
-                <hr />
-                <div className="chart">
-                  {' '}
-                  <Polar
-                    options={this.country}
-                    data={this.chartExample1.data4}
-                    // options={chartExample2.options}
-                    className="chart-canvas"
-                    id="chart-pie"
-                  />
-                </div>
+                {this.chartExample1.data3.data && (
+                  <div className="chart">
+                    <Pie
+                      options={this.city}
+                      data={this.chartExample1.data3}
+                      // options={chartExample2.options}
+                      className="chart-canvas"
+                      id="chart-pie"
+                    />
+                  </div>
+                )}{' '}
+                {this.chartExample1.data4.data && (
+                  <>
+                    {' '}
+                    <hr />
+                    <div className="chart">
+                      {' '}
+                      <Polar
+                        options={this.country}
+                        data={this.chartExample1.data4}
+                        // options={chartExample2.options}
+                        className="chart-canvas"
+                        id="chart-pie"
+                      />
+                    </div>
+                  </>
+                )}
                 <br />
               </Card>
               {/* <Card>

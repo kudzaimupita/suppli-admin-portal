@@ -725,7 +725,7 @@ class OrderTable extends React.Component {
                 {this.props.order[0] && this.props.order[0].plugsBalancedOn && (
                   <tr>
                     <th scope="row">
-                      <i className="ni ni-calendar-grid-58 text-black" /> Shops
+                      <i className="ni ni-calendar-grid-58 text-black" /> Stores
                       paid On{' '}
                     </th>
                     <td>

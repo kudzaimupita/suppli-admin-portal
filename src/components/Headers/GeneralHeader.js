@@ -118,7 +118,7 @@ class Profile extends React.Component {
                             tag="h5"
                             className="text-uppercase text-muted mb-0"
                           >
-                            Shops
+                            Stores
                           </CardTitle>
                           <span
                             className="h2 font-weight-bold mb-0"
@@ -190,7 +190,7 @@ class Profile extends React.Component {
                             className="h2 font-weight-bold mb-0"
                             style={{ color: 'white' }}
                           >
-                            {this.props.stats && this.props.stats.totalOrders}
+                            {this.props.stats && this.props.stats.totalProducts}
                           </span>
                         </div>
                         <Col className="col-auto">
@@ -270,7 +270,7 @@ class Profile extends React.Component {
                 </Col>
                 <Col lg="3" xl="3">
                   <Card
-                    className="card-stats mb-4 mb-xl-0 bg-dark"
+                    className="card-stats mb-4 mb-xl-0  bg-dark"
                     color="default"
                   >
                     <CardBody>
@@ -280,86 +280,68 @@ class Profile extends React.Component {
                             tag="h5"
                             className="text-uppercase text-muted mb-0"
                           >
-                            Refunds
+                            Users
                           </CardTitle>
                           <span
                             className="h2 font-weight-bold mb-0"
                             style={{ color: 'white' }}
                           >
-                            {this.props.refunds &&
-                              this.props.refunds.doc &&
-                              this.props.refunds.doc.length}
+                            {this.props.stats &&
+                              this.props.stats.activeUsers &&
+                              this.props.stats.activeUsers}
                           </span>
                         </div>
                         <Col className="col-auto">
-                          <div className="icon icon-shape bg-warning text-white rounded-circle shadow">
-                            <i className="ni ni-bag-17"></i>
+                          <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
+                            <i className="ni ni-single-02"></i>
                           </div>
                         </Col>
                       </Row>
-                      <p className="mt-0 mb-0 text-muted text-sm">
-                        <span
-                          className="text-success mr-2"
-                          style={{ fontSize: '10px' }}
-                        >
-                          {this.props.dailyStats &&
-                          this.props.dailyStats.newRefunds
-                            ? this.props.dailyStats.newRefunds.length
-                            : 0}
-                          {'  '}
-                        </span>
-
-                        <span
-                          className="text-nowrap"
-                          style={{ fontSize: '10px' }}
-                        >
-                          {'  '} Since 24hrs ago
-                        </span>
-                      </p>
-                      <p className="mt-0 mb-0 text-muted text-sm">
-                        <span
-                          className="text-secondary mr-0"
-                          style={{ fontSize: '10px' }}
-                        >
-                          {this.props.weeklyStats &&
-                          this.props.weeklyStats.newRefunds
-                            ? this.props.weeklyStats.newRefunds.length
-                            : 0}
-                          {'  '}
-                        </span>
-
-                        <span
-                          className="text-nowrap"
-                          style={{ fontSize: '10px' }}
-                        >
-                          {'  '} Since 7 days ago
-                        </span>
-                      </p>
-                      {/*   <p className="mt-0 mb-0 text-muted text-sm">
+                      <p
+                        className=" mb-0 text-muted text-sm"
+                        style={{ fontSize: '12px' }}
+                      >
                         <span
                           className="text-secondary mr-2"
-                          style={{ fontSize: '11px' }}
+                          style={{ fontSize: '12px' }}
                         >
-                          {this.props.refunds &&
-                            this.props.refunds.doc &&
-                            this.props.refunds.doc.filter(
-                              (refund) => refund.resolved === true
-                            ).length}
-                          {'  '} <small> resolved</small> ||{' '}
-                          {this.props.refunds &&
-                            this.props.refunds.doc &&
-                            this.props.refunds.doc.filter(
-                              (refund) => refund.status === 'awaitingResponse'
-                            ).length}
-                          {'  '}
-                          <small> awaiting response</small>
+                          {this.props.dailyStats &&
+                          this.props.dailyStats &&
+                          this.props.dailyStats.newUsers
+                            ? this.props.dailyStats.newUsers.length
+                            : 0}{' '}
+                          users
                         </span>
 
                         <span
                           className="text-nowrap"
-                          style={{ fontSize: '10px' }}
-                        ></span>
-                      </p> */}
+                          style={{ fontSize: '11px' }}
+                        >
+                          Since 24hrs
+                        </span>
+                      </p>
+                      <p
+                        className="mt-0 mb-0 text-muted text-sm"
+                        style={{ fontSize: '12px' }}
+                      >
+                        <span
+                          className="text-secondary mr-0"
+                          style={{ fontSize: '11px' }}
+                        >
+                          {this.props.weeklyStats &&
+                          this.props.weeklyStats.newUsers
+                            ? this.props.weeklyStats.newUsers.length
+                            : 0}
+                          {'  '} users
+                        </span>
+
+                        <span
+                          className="text-nowrap"
+                          style={{ fontSize: '11px' }}
+                        >
+                          {'  '} Since 7 days
+                        </span>
+                      </p>
                     </CardBody>
                   </Card>
                 </Col>
