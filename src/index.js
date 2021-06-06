@@ -8,7 +8,6 @@ import './styles/wieldy.less';
 import './assets/vendor/nucleo/css/nucleo.css';
 import './assets/vendor/font-awesome/css/font-awesome.min.css';
 import './assets/scss/argon-dashboard-react.scss';
-import 'react-notification-alert/dist/animate.css';
 import './assets/scss/image-gallery.scss';
 import 'antd/dist/antd.css';
 
