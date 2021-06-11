@@ -506,7 +506,7 @@ class Cards extends React.Component {
                     style={{ marginRight: '10px' }}
                     shape="square"
                     size={32}
-                    src={`http://localhost:5000/img/plugs/${
+                    src={`https://suppli-images.s3.af-south-1.amazonaws.com/${
                       this.props.plug.doc && this.props.plug.doc.logo
                     }`}
                   />{' '}
