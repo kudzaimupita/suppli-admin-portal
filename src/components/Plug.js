@@ -705,6 +705,7 @@ class Cards extends React.Component {
                         {' '}
                         <Media className="align-items-center">
                           <Avatar
+                          style={{marginRight:'8px'}}
                             shape="square"
                             size={64}
                             src={`http://localhost:5000/img/users/${
