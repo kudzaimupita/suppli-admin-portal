@@ -99,17 +99,12 @@ export const getAllPlugs = (id) => async (dispatch) => {
 };
 
 export const getPlugStats = (id) => async (dispatch) => {
-  dispatch({
-    type: GET_PLUG_SALES_LIST_REQUEST,
-  });
+  // dispatch({
+  //   type: GET_PLUG_SALES_LIST_REQUEST,
+  // });
 
   try {
-    const res = await api.get(`/orders/saleslist/${id}`);
-    console.log(res.data.data);
-    dispatch({
-      type: GET_PLUG_SALES_LIST_SUCCESS,
-      payload: res.data.data,
-    });
+    console.log('hi');
   } catch (err) {
     // const errors = err.response.data.error;
     // const errorArray = errors.split(',');
@@ -123,18 +118,12 @@ export const getPlugStats = (id) => async (dispatch) => {
 };
 
 export const getDueAmount = () => async (dispatch) => {
-  dispatch({
-    type: GET_UNBALANCED_SALES_REQUEST,
-  });
+  // dispatch({
+  //   type: GET_UNBALANCED_SALES_REQUEST,
+  // });
 
   try {
-    const res = await api.get(`/orders/salesdue`);
-    console.log(res.data.data);
-    dispatch({
-      type: GET_UNBALANCED_SALES_SUCCESS,
-      payload: res.data.data,
-    });
-    console.log(res.data);
+    console.log('hi');
   } catch (err) {
     console.log(err);
     const errors = err.response.data.error;
