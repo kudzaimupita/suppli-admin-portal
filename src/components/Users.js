@@ -82,12 +82,13 @@ class OrderTable extends React.Component {
     this.props.setState({ was: e.target.value });
   };
   onAdminSubmit = (e, id) => {
-    // e.preventDefault();
+    e.preventDefault();
     this.props.updateUser(id, { role: 'admin' });
+    e.stopPropagation();
   };
 
   onUserSubmit = (e, id) => {
-    // e.preventDefault();
+    e.preventDefault();
     this.props.updateUser(id, { role: 'user' });
   };
 
