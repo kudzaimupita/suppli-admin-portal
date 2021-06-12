@@ -124,17 +124,12 @@ export const addToWishlist = (id) => async (dispatch) => {
 };
 
 export const getProductStats = () => async (dispatch) => {
-  dispatch({
-    type: GET_PRODUCTS_STATS_REQUEST,
-  });
+  // dispatch({
+  //   type: GET_PRODUCTS_STATS_REQUEST,
+  // });
 
   try {
-    const res = await api.get('/products/plug/todayproducts');
-    console.log(res.data.data.doc);
-    dispatch({
-      type: GET_PRODUCTS_STATS_SUCCESS,
-      payload: res.data.data,
-    });
+    console.log('hi');
   } catch (err) {
     const errors = err.response.data.error;
 
