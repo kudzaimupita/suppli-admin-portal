@@ -8,20 +8,24 @@ class AdminFooter extends React.Component {
       <>
         <footer
           className="py-5"
-          style={{ backgroundColor: '#172b4d', backgroundSize: 'full' }}
+          style={{
+            height: '450px',
+            backgroundColor: '#172b4d',
+            backgroundSize: 'full',
+          }}
         >
           <Container>
             <Row className="align-items-center justify-content-xl-between">
               <Col xl="6">
                 <div className="copyright text-center text-xl-left text-muted">
-                  © 2021{' '}
+                  {/* © 2021{' '} */}
                   <a
                     className="font-weight-bold ml-1"
                     // href="https://www.creative-tim.com?ref=adr-admin-footer"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
-                    Suppl-i Online Shopping Mall
+                    {/* Suppl-i Online Shopping Mall */}
                   </a>
                 </div>
               </Col>
