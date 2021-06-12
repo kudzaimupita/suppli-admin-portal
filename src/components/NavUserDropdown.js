@@ -21,9 +21,7 @@ class UserNavDropdown extends React.Component {
               <span className="avatar avatar-sm rounded-circle">
                 <img
                   alt="..."
-                  src={`http://localhost:5000/img/users/${
-                    this.props.auth.user && this.props.auth.user.imageCover
-                  }`}
+                  src={`https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png`}
                 />
               </span>
               <Media className="ml-2 d-none d-lg-block">
