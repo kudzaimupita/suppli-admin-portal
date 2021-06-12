@@ -251,18 +251,19 @@ export const loadUser = () => async (dispatch) => {
 };
 
 export const loadMyPlug = () => async (dispatch) => {
-  dispatch({
-    type: GET_MY_PLUG_REQUEST,
-  });
+  // dispatch({
+  //   type: GET_MY_PLUG_REQUEST,
+  // });
 
   try {
-    const res = await api.get('/plugs/myplug');
+    console.log('hi');
+    // const res = await api.get('/plugs/myplug');
 
-    dispatch({
-      type: GET_MY_PLUG_SUCCESS,
-      payload: res.data.data.plug,
-    });
-    console.log(res.data.data.plug);
+    // dispatch({
+    //   type: GET_MY_PLUG_SUCCESS,
+    //   payload: res.data.data.plug,
+    // });
+    // console.log(res.data.data.plug);
   } catch (err) {
     console.log(err);
     dispatch({
