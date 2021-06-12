@@ -32,7 +32,7 @@ var routes = [
     layout: '/admin',
   },
   {
-    path: '/plugs',
+    path: '/stores',
     name: 'Stores',
     icon: 'ni ni-shop text-red',
     component: Plugs,
