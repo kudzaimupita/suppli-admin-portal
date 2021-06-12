@@ -506,7 +506,9 @@ class Cards extends React.Component {
                     style={{ marginRight: '10px' }}
                     shape="square"
                     size={32}
-                    src={`https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png`}
+                   src={`https://suppli-images.s3.af-south-1.amazonaws.com/${
+                      this.props.plug.doc && this.props.plug.doc.logo
+                    }`}
                   />{' '}
                   <br />
                   <h4>{this.props.plug.doc && this.props.plug.doc.name}</h4>
@@ -706,10 +708,7 @@ class Cards extends React.Component {
                           style={{marginRight:'8px'}}
                             shape="square"
                             size={64}
-                            src={`http://localhost:5000/img/users/${
-                              this.props.plug.doc &&
-                              this.props.plug.doc.plugAdmin.photo
-                            }`}
+                            src={`https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png`}
                           />
                           {/* <small color='info'><strong>{this.props.plug.doc && this.props.plug.doc.plugAdmin.name}</strong>   <small>R</small>
                                 </small> */}
