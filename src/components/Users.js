@@ -401,6 +401,7 @@ class OrderTable extends React.Component {
                   <Badge color="success">
                     {' '}
                     {(this.props.users &&
+                      this.props.users.doc &&
                       this.props.users.doc.filter(
                         (user) => user.role === 'admin'
                       ).length) ||
@@ -413,6 +414,7 @@ class OrderTable extends React.Component {
               <ToolkitProvider
                 data={
                   (this.props.users &&
+                    this.props.users.doc &&
                     this.props.users.doc.filter(
                       (user) => user.role === 'admin'
                     )) ||
