@@ -95,7 +95,7 @@ class OrderTable extends React.Component {
     <Avatar
       shape="square"
       size={24}
-      src={`http://localhost:5000/img/users/${row.photo}`}
+      src={`https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png`}
     />
   );
   activeFormatter = (cell, row) => (
@@ -240,6 +240,7 @@ class OrderTable extends React.Component {
                   <Badge color="default">
                     {' '}
                     {(this.props.users &&
+                      this.props.users.doc &&
                       this.props.users.doc.filter(
                         (user) => user.role === 'user'
                       ).length) ||
@@ -252,6 +253,7 @@ class OrderTable extends React.Component {
               <ToolkitProvider
                 data={
                   (this.props.users &&
+                    this.props.users.doc &&
                     this.props.users.doc.filter(
                       (user) => user.role === 'user'
                     )) ||
