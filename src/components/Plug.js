@@ -131,13 +131,13 @@ class Cards extends React.Component {
           <>
             <Link to={`/admin/product/${_id}`}>
               {' '}
-              <Tag
+              <Button
                 onClick={(e) => e.preventDefault()}
                 color="cyan"
                 icon={<i class="fa fa-eye"></i>}
               >
-                <a> View</a>
-              </Tag>
+                View
+              </Button>
             </Link>
           </>
         ),
@@ -506,7 +506,7 @@ class Cards extends React.Component {
                     style={{ marginRight: '10px' }}
                     shape="square"
                     size={32}
-                   src={`https://suppli-images.s3.af-south-1.amazonaws.com/${
+                    src={`https://suppli-images.s3.af-south-1.amazonaws.com/${
                       this.props.plug.doc && this.props.plug.doc.logo
                     }`}
                   />{' '}
@@ -582,6 +582,7 @@ class Cards extends React.Component {
                     <>
                       {' '}
                       {this.props.plugStats.orders &&
+                        this.props.plugStats.orders.plugSales &&
                         this.props.plugStats.orders.plugSales.length}
                     </>
                   </Descriptions.Item>
@@ -705,7 +706,7 @@ class Cards extends React.Component {
                         {' '}
                         <Media className="align-items-center">
                           <Avatar
-                          style={{marginRight:'8px'}}
+                            style={{ marginRight: '8px' }}
                             shape="square"
                             size={64}
                             src={`https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png`}
